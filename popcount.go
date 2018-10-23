@@ -40,3 +40,13 @@ func PopCount3(x uint64) int {
 	}
 	return sum
 }
+
+func PopCount4(x uint64) int {
+	var sum int
+	for x != 0 {
+		sum++
+		x = x & (x - 1)
+	}
+	return sum
+
+}
