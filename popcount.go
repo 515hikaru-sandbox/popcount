@@ -19,6 +19,15 @@ func PopCount(x uint64) int {
 	return sum
 }
 
+func PopCountUint8(x uint8) int {
+	var sum int
+	var i uint64
+	for i = 0; i < 8; i++ {
+		sum += int(pc[byte(x>>(i*8))])
+	}
+	return sum
+}
+
 // 愚直な実装
 func PopCount2(x uint64) int {
 	return int(pc[byte(x>>(0*8))] +
